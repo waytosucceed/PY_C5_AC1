@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AC1</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <img src="./logo/Logo.png" alt="Logo" class="logo" />
+    <img src="./logo/header.png" alt="Header" class="header-image" />
+  </header>
+
+  <div class="container mt-5">
+    <h1 class="text-center">Strings and String Methods</h1>
+    <p class="text-center">Click on each topic to learn more.</p>
+
+    <div class="row">
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#stringsModal">
+          Strings
+        </button>
+      </div>
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#concatenationModal">
+          Concatenation
+        </button>
+      </div>
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#repetitionModal">
+          Repetition
+        </button>
+      </div>
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#indexingModal">
+          Indexing
+        </button>
+      </div>
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#lengthModal">
+          Length
+        </button>
+      </div>
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#slicingModal">
+          Slicing
+        </button>
+      </div>
+      <!-- <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#stringMethodsModal">
+          String Methods
+        </button>
+      </div> -->
+      <div>
+        <button class="btn btn-custom btn-block" data-toggle="modal" data-target="#stringFormattingModal">
+          String Formatting
+        </button>
+      </div>
+    </div>
+
+
+    <!-- Modals -->
+    <div class="modal fade" id="stringsModal" tabindex="-1" aria-labelledby="stringsLabel" aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="stringsLabel">Strings</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  Strings are one of the most widely used data types, and
+                  understanding how to manipulate them efficiently is essential for
+                  programming.  <br>
+                  As we studied in our first class, <b>Strings are
+                  sequences of characters used to store text data.</b>
+                </p>
+                <p>
+                  You must have noticed sometimes we use single quotes and
+                  sometimes double quotes for storing string values. Why do we have
+                  both single and double quotes for storing text?
+                </p>
+                <p>
+                  Well, in Python we can store text in <b>single, double, and triple
+                  quotes.</b> Let’s see when to use what!
+                </p>
+
+                <h4>Single Quotes</h4>
+                <p>These are used for short and simple text.</p>
+                <p><strong>Example:</strong></p>
+                <img class="modal-img" src="./images/sc1.png" alt="sc" style="width: 100%; max-width: 400px" />
+                <p>
+                  When should you not use single quotes? When a text has a single
+                  quote or a backslash (\) inside it.
+                </p>
+                <p><strong>Example:</strong></p>
+                <img class="modal-img" src="./images/sc2.png" alt="sc" style="width: 100%; max-width: 600px" />
+                <p>
+                  If you want this to work with single quotes, you need to give an
+                  escape character (\).
+                </p>
+                <p><strong>Example:</strong></p>
+
+                <img class="modal-img" src="./images/sc3.png" alt="sc" style="width: 100%; max-width: 400px" />
+
+                <h4>Double Quotes</h4>
+                <p>
+                  When your string contains an apostrophe (') or single quote,
+                  double quotes allow you to avoid using escape characters.
+                </p>
+                <p><strong>Example:</strong></p>
+                <img class="modal-img" src="./images/sc4.png" alt="sc" style="width: 100%; max-width: 400px" />
+
+                <p>
+                  Double quotes are often preferred in Python, especially in
+                  professional code, as they make it easier to include apostrophes.
+                </p>
+
+                <h4>Triple Quotes</h4>
+                <p>Triple quotes are essential for strings that span multiple lines.</p>
+                <p><strong>Example:</strong></p>
+                <img class="modal-img" src="./images/sc5.png" alt="sc" style="width: 100%; max-width: 700px" />
+                <p>If a <b>string</b> contains <b>both single and double quotes</b>, triple quotes allow you to
+                  <b>include</b> them without escaping. <br>
+                  Triple quotes are the standard for writing <b>multi-line comments</b> or <b>docstrings</b> in Python.
+                </p>
+                <img class="modal-img" src="./images/sc6.png" alt="sc" style="width: 100%; max-width: 700px" />
+                <p>
+                  Triple quotes are typically avoided for short strings or
+                  single-line strings, as they can be more cumbersome than single or
+                  double quotes.
+                </p>
+
+                <p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="concatenationModal" tabindex="-1" aria-labelledby="concatenationLabel"
+      aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="concatenationLabel">Concatenation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  We can combine strings using the <strong>+</strong> operator.
+                </p>
+                <img class="modal-img" src="./images/sc7.png" alt="sc" style="width: 100%; max-width: 400px" />
+                <p>
+                  Concatenation helps combine information and create user-friendly
+                  outputs in applications.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="repetitionModal" tabindex="-1" aria-labelledby="repetitionLabel" aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="repetitionLabel">Repetition</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  You can even repeat the same text as many times as you want! Let’s
+                  see how to do that.
+                </p>
+                <p>
+                  You can use the <strong>*</strong> operator to repeat a string multiple times.
+                </p>
+                <div style="display: flex; gap: 2rem;">
+                  <img class="modal-img" src="./images/sc8.png" alt="sc" style="width: 100%; max-width: 400px" />
+                  <p style="width: 40%;"> 
+                    String repetition is useful for generating patterns, creating visual
+                    elements, and automating repetitive tasks, which can be used in
+                    text-based games.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="indexingModal" tabindex="-1" aria-labelledby="indexingLabel" aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="indexingLabel">Indexing</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  You can access individual characters of a string using their index. <br>
+                  <img class="modal-img" src="./images/sc9.png" alt="sc" style="width: 100%; max-width: 400px" /> <br>
+                  We use square brackets <strong>[]</strong> to specify index.
+                </p>
+                <img class="modal-img" src="./images/sc10.png" alt="sc" style="width: 100%; max-width: 400px" />
+                <p>
+                  In the case of very long strings, it would be difficult to know the index of the last character.
+                  Hence, we also have negative indexing.
+                </p>
+                <img class="modal-img" src="./images/sc11.png" alt="sc" style="width: 100%; max-width: 400px" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="lengthModal" tabindex="-1" aria-labelledby="lengthLabel" aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="lengthLabel">Length</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  You can count the number of characters in a string using the <strong>len()</strong> function.
+                </p>
+                <p>
+                  We will learn more about functions in our next class.
+                </p>
+                <img class="modal-img" src="./images/sc12.png" alt="sc" style="width: 100%; max-width: 400px" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="slicingModal" tabindex="-1" aria-labelledby="slicingLabel" aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="slicingLabel">Slicing</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  We can extract some part of the string using slice notation:
+                  <strong>[Start Index (inclusive) : End Index (exclusive)]</strong>
+                </p>
+                <img class="modal-img" src="./images/sc13.png" alt="sc" style="width: 100%; max-width: 400px" />
+                <div style="display: flex; gap: 2rem;">
+                  <p >
+                    Let’s say you want a string starting from index 5 till the end, you can do that in the following
+                    way:
+                  </p>
+                </div>
+                <img class="modal-img" src="./images/sc14.png" alt="sc" style="width: 100%; max-width: 250px" /> <br> <br>
+                <p>
+                  You can reverse the entire string like so: <br>
+                  <img class="modal-img" src="./images/sc22.png" alt="sc" style="width: 100%; max-width: 400px" /> <br>
+                  The first colon means it starts at the beginning, the second means it ends when the string ends and -1 means it steps backward.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="stringMethodsModal" tabindex="-1" aria-labelledby="stringMethodsLabel"
+      aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="stringMethodsLabel">String Methods</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  Methods are functions associated with an object or class in Python Programming. They are used to
+                  perform specific tasks or operations on the data stored within objects or classes.
+                  In Python, all variables are objects. We will learn about the class in upcoming classes.
+                </p>
+                <p>
+                  In simple words, methods are actions that an object can perform. You use a method by attaching it to
+                  an object with a dot (<strong>.</strong>).
+                  Different objects have different methods that can be performed on them. Let’s have a look at methods
+                  we can perform on strings:
+                </p>
+                <ul>
+                  <li><strong>lower()</strong> - Converts all characters into lowercase</li>
+                  <li><strong>upper()</strong> - Converts all characters into uppercase</li>
+                  <img class="modal-img" src="./images/sc15.png" alt="sc" style="width: 100%; max-width: 400px" />
+                  <li><strong>strip()</strong>, <strong>lstrip()</strong>, <strong>rstrip()</strong>:
+                    <div style="display: flex; gap:2rem"> 
+                      <img class="modal-img" src="./images/sc16.png" alt="sc" style="width: 100%; max-width: 400px" />
+                      <ul style="width: 40%;">
+                        <li><strong>strip()</strong> - Removes space at the beginning and end of a string</li>
+                        <li><strong>lstrip()</strong> - Removes space from the beginning of the string</li>
+                        <li><strong>rstrip()</strong> - Removes space at the end of the string</li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><strong>replace()</strong> - Replaces a specified word with another word</li>
+                  <img class="modal-img" src="./images/sc17.png" alt="sc" style="width: 100%; max-width: 400px" />
+
+                  <li><strong>find()</strong> - Finds the first occurrence of a word in a string. <br><br>Returns
+                    <strong>0</strong> if word is found.
+                    <img class="modal-img" src="./images/sc18.png" alt="sc" style="width: 100%; max-width: 400px; padding-left: 10px;" /> <br>
+                    Returns
+                    <strong>-1</strong> if word not found.
+                    <img class="modal-img" src="./images/sc19.png" alt="sc" style="width: 100%; max-width: 400px;padding-left: 10px;" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal fade" id="stringFormattingModal" tabindex="-1" aria-labelledby="stringFormattingLabel"
+      aria-hidden="true">
+      <div class="modal-dialog custom-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="stringFormattingLabel">String Formatting</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="content-container">
+              <div class="text-content">
+                <p>
+                  In Python, you can insert values into a string using placeholders (<strong>{}</strong>).
+                </p>
+                <p>
+                  <strong>format()</strong>:
+                <ul>
+                  <li>Inserting values into a string using placeholders (<strong>{}</strong>).</li>
+                  <img class="modal-img" src="./images/sc20.png" alt="sc" style="width: 100%; max-width: 400px" />
+
+                </ul>
+                </p>
+                <p>
+                  <strong>f-strings</strong>: <br>
+                  <img class="modal-img" src="./images/sc21.png" alt="sc" style="width: 100%; max-width: 400px" />
+
+                <ul>
+                  <li>f-strings allow you to directly embed expressions inside string literals using curly braces
+                    (<strong>{}</strong>).</li>
+                  <li>f-strings were introduced in Python 3.6.</li>
+                </ul>
+                </p>
+                <p>
+                 <b>Strings in Python are immutable, which means you cannot change a string once it is created. Any
+                  modifications we do using string methods result in a new string.</b> 
+                </p>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
